@@ -1,23 +1,14 @@
 import data from "./data/data.json"
-//import ClassList from "./Components/ClassList"
+import ClassList from "./Components/ClassList"
 
 
-let test = console.log
-
-const classesList = data.map((student) => student.cohort.cohortCode).filter((season, index, self) => self.indexOf(season) === index)
-const spacedList = classesList.forEach((season) => season.replace(/([a-zA-Z]+)(\d+)/, "$1 $2"))
-test(spacedList)
-
-// for(let i =0; i < classesList.length; i++){
-//  let broken = classesList[i].replace(/([a-zA-Z]+)(\d+)/, "$1 $2")
-//  test(broken)
-// }
 
 
 function App() {
- return <h1>X</h1>
+ return (
+ <ClassList data={data}/>
 
-
+ )
 
 
 }

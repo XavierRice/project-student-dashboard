@@ -1,0 +1,7 @@
+.ClassList{
+    border: 3px solid black;
+    display: block;
+    align-items: center;
+    height: 550px;
+    width: 300px;
+}
