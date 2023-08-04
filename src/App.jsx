@@ -3,11 +3,26 @@ import ClassList from "./Components/ClassList";
 
 function App() {
   const StudentsNames = data.map((eachStudentObj) => {
+
+    
+     
+       const date = new Date(eachStudentObj.dob)
+       const options = {
+           month: 'long',
+           day: 'numeric',
+           daySuffix: 'numeric',         
+       }
+
+       const formatter = new Intl.DateTimeFormat('en-us', options)
+       const formattedDate = formatter.format(date)
+
+
+
     return (
       <>
         <h3>{eachStudentObj.names.preferredName} {eachStudentObj.names.middleName.slice(0,1).toUpperCase()}. {eachStudentObj.names.surname}</h3>
         <h4>{eachStudentObj.username}</h4>
-        <h4>Birthday: {eachStudentObj.dob}</h4>
+        <h4>Birthday: {formattedDate}</h4>
 
       </>
     );
