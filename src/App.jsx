@@ -1,39 +1,13 @@
 import data from "./data/data.json";
-import ClassList from "./Components/ClassList";
+import ClassList from "./Components/ClassList.jsx";
+import StudentCards from "./Components/StudentCards.jsx";
 
 function App() {
-  const StudentsNames = data.map((eachStudentObj) => {
 
-    
-     
-       const date = new Date(eachStudentObj.dob)
-       const options = {
-           month: 'long',
-           day: 'numeric',
-           daySuffix: 'numeric',         
-       }
-
-       const formatter = new Intl.DateTimeFormat('en-us', options)
-       const formattedDate = formatter.format(date)
-
-
-
-    return (
-      <>
-        <h3>{eachStudentObj.names.preferredName} {eachStudentObj.names.middleName.slice(0,1).toUpperCase()}. {eachStudentObj.names.surname}</h3>
-        <h4>{eachStudentObj.username}</h4>
-        <h4>Birthday: {formattedDate}</h4>
-
-      </>
-    );
-  });
-
+  
   return (
-    <>
-      <h1>Student Dashboard</h1>
-      {StudentsNames}
-    </>
-  );
+    <ClassList data={data}/>
+  )
 }
 
 export default App;

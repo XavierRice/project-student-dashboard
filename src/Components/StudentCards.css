@@ -1,0 +1,27 @@
+.container1{
+   margin: 5px;
+   padding: 10px;
+   display: flex;
+   border: 4px solid black;
+   justify-content: space-between;
+   align-items: center;
+   width: 700px;
+   height: 150px;
+   background-color: dodgerblue;
+}
+
+img{
+    height: 150px;
+}
+
+.textBox{
+    padding: 100px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.hover:hover{
+
+    text-decoration: underline;
+    color: red;
+}
