@@ -1,20 +1,27 @@
-import data from "./data/data.json"
-import ClassList from "./Components/ClassList"
-
-
-
+import data from "./data/data.json";
+import ClassList from "./Components/ClassList";
 
 function App() {
- return (
- <ClassList data={data}/>
+  const StudentsNames = data.map((eachStudentObj) => {
+    return (
+      <>
+        <h3>{eachStudentObj.names.preferredName} {eachStudentObj.names.middleName.slice(0,1).toUpperCase()}. {eachStudentObj.names.surname}</h3>
+        <h4>{eachStudentObj.username}</h4>
+        <h4>Birthday: {eachStudentObj.dob}</h4>
 
- )
+      </>
+    );
+  });
 
-
+  return (
+    <>
+      <h1>Student Dashboard</h1>
+      {StudentsNames}
+    </>
+  );
 }
 
 export default App;
-
 
 /*const example = {
     "id": "D8-hEWB",
