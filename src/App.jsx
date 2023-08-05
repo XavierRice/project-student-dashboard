@@ -16,7 +16,7 @@ import OneOnOne from "./Components/OneOnOne.jsx";
 
 
 
-
+//  <StudentCards data ={selectedStudents}/>
 // <ClassList data={data} onSeasonSelect={handleSelectedSeason}/>
 
 function dataSelection(data, selectedSeason) {
@@ -40,15 +40,17 @@ function dataSelection(data, selectedSeason) {
 function App() {
 
   const [selectedSeason, setSelectedSeason] = useState("");
-  test(selectedSeason)
-
+  
   const handleSelectedSeason = (season) => {
     setSelectedSeason(season)
   }
 
+  const selectedStudents = dataSelection(data, selectedSeason)
+
   return (
      <div className="Master">
       <ClassList data={data} onSeasonSelect={handleSelectedSeason}/>
+      <StudentCards data ={selectedStudents}/>
      </div>
   )
 
