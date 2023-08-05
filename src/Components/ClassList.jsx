@@ -1,20 +1,22 @@
 import { useState } from "react";
 import "./ClassList.css";
 
-const ClassList = ({ data }) => {
+const ClassList = ({ data, onSeasonSelect }) => {
 
    const [selection, setSelection] = useState("")
-   console.log(selection)
+ //  console.log(selection)
 
    function handleSeason(event) {
 
       const splitWords = event.target.innerText.split(" ")
       const theSelection = `${splitWords[0]}${splitWords[1]}`
       setSelection(theSelection)
+      onSeasonSelect(theSelection)
    }
 
  function handleAll(event){
     setSelection("All")
+    onSeasonSelect("All")
 
  }
 
@@ -34,9 +36,9 @@ const ClassList = ({ data }) => {
    });
 
    return (
-      <div className="container" key="classBox" >
-         <div className="ClassList" onClick={handleAll} >
-            <h3>All Students</h3>
+      <div className="container2" key="classBox" >
+         <div className="ClassList" >
+            <h3 onClick={handleAll} >All Students</h3>
             {list}
          </div>
       </div>

@@ -1,12 +1,34 @@
+import { useState } from "react";
 import data from "./data/data.json";
 import TopBar from "./Components/TopBar";
 import ClassList from "./Components/ClassList.jsx";
 import StudentCards from "./Components/StudentCards.jsx";
+import OneOnOne from "./Components/OneOnOne.jsx";
+
+// <ClassList data={data} onSeasonSelect={handleSelectedSeason}/>
 
 function App() {
 
+const ParentComponent = () => {
+  const [selectedSeason, setSelectedSeason] = useState("");
+
+
+}
+
+const handleSelectedSeason= (season) => {
+  setSelectedSeason(season)
+}
+
+ return (
+
+  <OneOnOne/>
+ )
+
+
+
+
+
   
-  return <TopBar/>
 }
 
 export default App;
