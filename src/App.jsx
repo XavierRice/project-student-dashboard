@@ -1,13 +1,12 @@
 import data from "./data/data.json";
+import TopBar from "./Components/TopBar";
 import ClassList from "./Components/ClassList.jsx";
 import StudentCards from "./Components/StudentCards.jsx";
 
 function App() {
 
   
-  return (
-    <ClassList data={data}/>
-  )
+  return <TopBar/>
 }
 
 export default App;
