@@ -1,3 +1,4 @@
+const test = console.log
 import { useState } from "react";
 import data from "./data/data.json";
 import TopBar from "./Components/TopBar";
@@ -5,30 +6,57 @@ import ClassList from "./Components/ClassList.jsx";
 import StudentCards from "./Components/StudentCards.jsx";
 import OneOnOne from "./Components/OneOnOne.jsx";
 
+
+//   if (selectedSeason === "All"){
+//   return data;
+// }else{
+//   const SelectedStudnets = data.slice().filter((studentObj) => {
+//     return studentObj.cohort.cohortCode === selectedSeason
+// })
+
+
+
+
 // <ClassList data={data} onSeasonSelect={handleSelectedSeason}/>
+
+function dataSelection(data, selectedSeason) {
+  if (selectedSeason === "All") {
+    return data;
+  } else {
+    return data.slice().filter((studentObj) => {
+      studentObj.cohort.cohortCode === selectedSeason
+    })
+  }
+}
+
+// const SelectedStudnets = data.slice().filter((studentObj) => {
+//   return studentObj.cohort.cohortCode === "Summer2025"
+// })
+
+
+
+
 
 function App() {
 
-const ParentComponent = () => {
   const [selectedSeason, setSelectedSeason] = useState("");
+  test(selectedSeason)
 
+  const handleSelectedSeason = (season) => {
+    setSelectedSeason(season)
+  }
 
-}
-
-const handleSelectedSeason= (season) => {
-  setSelectedSeason(season)
-}
-
- return (
-
-  <OneOnOne/>
- )
-
-
+  return (
+     <div className="Master">
+      <ClassList data={data} onSeasonSelect={handleSelectedSeason}/>
+     </div>
+  )
 
 
 
-  
+
+
+
 }
 
 export default App;
