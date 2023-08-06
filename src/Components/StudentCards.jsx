@@ -7,6 +7,7 @@ import "./StudentCards.css"
 
 
 const StudentCards = ({ data, season }) => {
+    
     const [showDivs, setShowDivs] = useState(data.map(() => false));       // CHATGPT helped me expand this into and infinte loop....
 
     const handleShowMore = (index) => {
@@ -90,7 +91,11 @@ const StudentCards = ({ data, season }) => {
                                 <p>Current Total:{eachStudentObj.codewars.current.total}</p>
                                 <p>Last Week:{eachStudentObj.codewars.current.lastWeek}</p>
                                 <p>Goal:{eachStudentObj.codewars.goal.total}</p>
-                                 <p>Percent Reach:{(eachStudentObj.codewars.current.total/eachStudentObj.codewars.goal.total)*100}%</p>
+                                <p>Percent Reach:{(eachStudentObj.codewars.current.total/eachStudentObj.codewars.goal.total)*100}%</p>
+                                <hr size="3" width="90%" color="green" /> 
+                                <p><strong>NOTES:</strong></p>
+                                <p>Instructor:{eachStudentObj.notes.commenter}</p>
+                                <p>Comment:{eachStudentObj.notes.comments}</p>
                             </div>
                         )}
                     </div>
