@@ -1,5 +1,9 @@
 import "./StudentCards.css"
 
+//   <h1>{seasonFixer(season)}</h1>
+//  <h3>Total Students:{data.length}</h3>
+
+
 const StudentCards = ({ data, season }) => {
 
     const StudentCardCreator = data.map((eachStudentObj) => {
@@ -30,43 +34,41 @@ const StudentCards = ({ data, season }) => {
             if ((status.resume && status.linkedin && status.github && status.mockInterview) === true && eachStudentObj.codewars.current.total > 60) {
                 return (
                     <h3
-                        style={{color:"green"}}
+                        style={{ color: "green"}}
                     >On Track to Graduate</h3>
                 )
             } else {
                 return (
-                    <h3 style={{color:"yellow"}}
+                    <h3 style={{ color: "yellow" }}
                     >NOT on Track to Graduate</h3>
                 )
             }
 
         }
         return (
-            <div className="container1" key={eachStudentObj.id}>
-                <h1>{seasonFixer(season)}</h1>
-                <h3>Total Students:{data.length}</h3>
-
-                <div>
-                    <div className="pictureBox">
-                        <img alt="studentImg" src={eachStudentObj.profilePhoto}></img>
+                <div className="container1" key={eachStudentObj.id}>
+                    <div>
+                        <div className="pictureBox">
+                            <img alt="studentImg" src={eachStudentObj.profilePhoto}></img>
+                        </div>
+                        <div className="textBox">
+                            <h3>
+                                {eachStudentObj.names.preferredName}{" "}
+                                {eachStudentObj.names.middleName.slice(0, 1).toUpperCase()}.{" "}
+                                {eachStudentObj.names.surname}
+                            </h3>
+                            <h4>{eachStudentObj.username}</h4>
+                            <h4>Birthday: {formattedDate}</h4>
+                            <h4 className="hover">Show more...</h4>
+                        </div>
                     </div>
-                    <div className="textBox">
-                        <h3>
-                            {eachStudentObj.names.preferredName}{" "}
-                            {eachStudentObj.names.middleName.slice(0, 1).toUpperCase()}.{" "}
-                            {eachStudentObj.names.surname}
-                        </h3>
-                        <h4>{eachStudentObj.username}</h4>
-                        <h4>Birthday: {formattedDate}</h4>
-                        <h4 className="hover">Show more...</h4>
+                    <div className="status">
+                        <CheckOnTrack />
                     </div>
                 </div>
-                <div>
-                <CheckOnTrack/>
-                </div>
-            </div>
         );
     });
+    
     return StudentCardCreator;
 };
 

@@ -1,23 +1,19 @@
 .container1{
-   margin: 5px;
+   margin-left: 225px;
    padding: 10px;
-   display: flex;
+   display: grid;
+   flex-direction: column;
+   grid-template-columns: 1fr;
    border: 4px solid black;
-   justify-content: space-between;
-   align-items: center;
-   width: 700px;
+   align-items: start;
+   width: 800px;
    height: 150px;
-   background-color: dodgerblue;
+   
+   z-index:1;
 }
 
 img{
     height: 150px;
-}
-
-.textBox{
-    padding: 100px;
-    margin-top: 40px;
-    margin-bottom: 40px;
 }
 
 .hover:hover{
@@ -25,3 +21,15 @@ img{
     text-decoration: underline;
     color: red;
 }
+
+.pictureBox{
+    flex: 1;
+}
+
+.textBox{
+    position: relative;
+    flex: 1;
+    text-align: right;
+    margin-left: 10px;
+    z-index: 2;
+}  

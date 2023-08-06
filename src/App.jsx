@@ -13,14 +13,13 @@ import OneOnOne from "./Components/OneOnOne.jsx";
 
 
 function App() {
-  
-  
+
   function dataSelection(data, selectedSeason) {
     if (selectedSeason === "All") {
       return data;
     } else {
       return data.slice().filter((studentObj) => {
-       return  studentObj.cohort.cohortCode === selectedSeason;
+        return studentObj.cohort.cohortCode === selectedSeason;
       });
     };
   };
@@ -35,14 +34,18 @@ function App() {
   const selectedStudents = dataSelection(data, selectedSeason)
 
   return (
-    <StudentCards data ={selectedStudents}season={selectedSeason} key="students"/>
-    
+
+      <div className="Master">
+        <div className="header"><TopBar/></div>
+        <div className="section1">
+          <ClassList data={data} onSeasonSelect={handleSelectedSeason} />
+        </div>
+        <div className="section2">
+          <StudentCards data={selectedStudents} season={selectedSeason} key="students" />
+        </div>
+      </div>
+  
   );
-
-
-
-
-
 
 }
 
