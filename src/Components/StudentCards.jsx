@@ -30,24 +30,23 @@ const StudentCards = ({ data, season }) => {
             if ((status.resume && status.linkedin && status.github && status.mockInterview) === true && eachStudentObj.codewars.current.total > 60) {
                 return (
                     <h3
-                        style={"color:green"}
+                        style={{color:"green"}}
                     >On Track to Graduate</h3>
                 )
             } else {
                 return (
-                    <h3
-                        style={"color:yellow"}
+                    <h3 style={{color:"yellow"}}
                     >NOT on Track to Graduate</h3>
                 )
             }
 
         }
         return (
-            <div className="container1">
-                <h1>{seasonFixer}</h1>
+            <div className="container1" key={eachStudentObj.id}>
+                <h1>{seasonFixer(season)}</h1>
                 <h3>Total Students:{data.length}</h3>
 
-                <div key={eachStudentObj.id} >
+                <div>
                     <div className="pictureBox">
                         <img alt="studentImg" src={eachStudentObj.profilePhoto}></img>
                     </div>

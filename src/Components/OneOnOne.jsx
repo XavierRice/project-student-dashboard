@@ -28,7 +28,7 @@ setComment("")
                 <label htmlFor="name">
                     Commentor Name:
                     <input
-                        id={nameTag}
+                        id="nameTag"
                         name="name"
                         type="text"
                         value={nameTag}
@@ -41,7 +41,7 @@ setComment("")
                 <label htmlFor="caption">
                     Comment:
                     <input
-                        id="inlargedInput"
+                        id="enlargedInput"
                         name="caption"
                         type="text"
                         value={comment}

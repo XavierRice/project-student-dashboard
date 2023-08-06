@@ -1,4 +1,5 @@
 const test = console.log
+import "./index.css"
 import { useState } from "react";
 import data from "./data/data.json";
 import TopBar from "./Components/TopBar";
@@ -7,20 +8,23 @@ import StudentCards from "./Components/StudentCards.jsx";
 import OneOnOne from "./Components/OneOnOne.jsx";
 
 
-// <StudentCards data ={selectedStudents}season={selectedSeason}/>
-// <ClassList data={data} onSeasonSelect={handleSelectedSeason}/>
+//<StudentCards data ={selectedStudents}season={selectedSeason} key="students"/>
+//<ClassList data={data} onSeasonSelect={handleSelectedSeason}/>
 
-function dataSelection(data, selectedSeason) {
-  if (selectedSeason === "All") {
-    return data;
-  } else {
-    return data.slice().filter((studentObj) => {
-      studentObj.cohort.cohortCode === selectedSeason
-    })
-  }
-}
 
 function App() {
+  
+  
+  function dataSelection(data, selectedSeason) {
+    if (selectedSeason === "All") {
+      return data;
+    } else {
+      return data.slice().filter((studentObj) => {
+       return  studentObj.cohort.cohortCode === selectedSeason;
+      });
+    };
+  };
+
 
   const [selectedSeason, setSelectedSeason] = useState("");
 
@@ -31,11 +35,9 @@ function App() {
   const selectedStudents = dataSelection(data, selectedSeason)
 
   return (
-    <div className="Master">
-      <ClassList data={data} onSeasonSelect={handleSelectedSeason} key="list" />
-       <StudentCards data ={selectedStudents}season={selectedSeason} key="students"/>
-    </div>
-  )
+    <StudentCards data ={selectedStudents}season={selectedSeason} key="students"/>
+    
+  );
 
 
 
@@ -78,3 +80,13 @@ export default App;
       "scores": { "assignments": 0.71, "projects": 0.7, "assessments": 0.66 }
     }
   },*/
+
+//   <div className="Master">
+//   <div><TopBar/></div>
+//   <div className="section1">
+//   <ClassList data={data} onSeasonSelect={handleSelectedSeason}/>
+//   </div>
+//   <div className="section2">
+//   <StudentCards data ={selectedStudents}season={selectedSeason} key="students"/>
+//   </div>
+// </div>
