@@ -7,16 +7,7 @@ import StudentCards from "./Components/StudentCards.jsx";
 import OneOnOne from "./Components/OneOnOne.jsx";
 
 
-//   if (selectedSeason === "All"){
-//   return data;
-// }else{
-//   const SelectedStudnets = data.slice().filter((studentObj) => {
-//     return studentObj.cohort.cohortCode === selectedSeason
-// })
-
-
-
-//  <StudentCards data ={selectedStudents}/>
+// <StudentCards data ={selectedStudents}season={selectedSeason}/>
 // <ClassList data={data} onSeasonSelect={handleSelectedSeason}/>
 
 function dataSelection(data, selectedSeason) {
@@ -29,9 +20,8 @@ function dataSelection(data, selectedSeason) {
   }
 }
 
-// const SelectedStudnets = data.slice().filter((studentObj) => {
-//   return studentObj.cohort.cohortCode === "Summer2025"
-// })
+
+
 
 
 
@@ -40,7 +30,7 @@ function dataSelection(data, selectedSeason) {
 function App() {
 
   const [selectedSeason, setSelectedSeason] = useState("");
-  
+
   const handleSelectedSeason = (season) => {
     setSelectedSeason(season)
   }
@@ -48,10 +38,9 @@ function App() {
   const selectedStudents = dataSelection(data, selectedSeason)
 
   return (
-     <div className="Master">
-      <ClassList data={data} onSeasonSelect={handleSelectedSeason}/>
-      <StudentCards data ={selectedStudents}/>
-     </div>
+    <div className="Master">
+
+    </div>
   )
 
 
