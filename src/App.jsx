@@ -34,17 +34,20 @@ function App() {
   const selectedStudents = dataSelection(data, selectedSeason)
 
   return (
-
+    <>
       <div className="Master">
-        <div className="header"><TopBar/></div>
+        <div className="header"><TopBar /></div>
         <div className="section1">
           <ClassList data={data} onSeasonSelect={handleSelectedSeason} />
         </div>
         <div className="section2">
           <StudentCards data={selectedStudents} season={selectedSeason} key="students" />
         </div>
+        <div className="section3">
+          <OneOnOne/>
+        </div>
       </div>
-  
+    </>
   );
 
 }

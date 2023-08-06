@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./StudentCards.css"
 
 //   <h1>{seasonFixer(season)}</h1>
@@ -5,6 +6,12 @@ import "./StudentCards.css"
 
 
 const StudentCards = ({ data, season }) => {
+
+    const [showDiv, setShowDiv] = useState(false)
+
+    const handleShowMore = () => {
+        setShowDiv(!showDiv)
+    }
 
     const StudentCardCreator = data.map((eachStudentObj) => {
 
@@ -34,41 +41,55 @@ const StudentCards = ({ data, season }) => {
             if ((status.resume && status.linkedin && status.github && status.mockInterview) === true && eachStudentObj.codewars.current.total > 60) {
                 return (
                     <h3
-                        style={{ color: "green"}}
+                        style={{ color: "green", marginLeft: "125px" }}
                     >On Track to Graduate</h3>
                 )
             } else {
                 return (
-                    <h3 style={{ color: "yellow" }}
+                    <h3 style={{ color: "blue", marginLeft: "85px" }}
                     >NOT on Track to Graduate</h3>
                 )
             }
 
         }
         return (
-                <div className="container1" key={eachStudentObj.id}>
-                    <div>
-                        <div className="pictureBox">
-                            <img alt="studentImg" src={eachStudentObj.profilePhoto}></img>
-                        </div>
-                        <div className="textBox">
-                            <h3>
-                                {eachStudentObj.names.preferredName}{" "}
-                                {eachStudentObj.names.middleName.slice(0, 1).toUpperCase()}.{" "}
-                                {eachStudentObj.names.surname}
-                            </h3>
-                            <h4>{eachStudentObj.username}</h4>
-                            <h4>Birthday: {formattedDate}</h4>
-                            <h4 className="hover">Show more...</h4>
-                        </div>
+            <div className="container1" key={eachStudentObj.id}>
+                <div>
+                    <div className="pictureBox">
+                        <img alt="studentImg" src={eachStudentObj.profilePhoto}></img>
                     </div>
-                    <div className="status">
-                        <CheckOnTrack />
+                    <div className="textBox">
+                        <h3>
+                            {eachStudentObj.names.preferredName}{" "}
+                            {eachStudentObj.names.middleName.slice(0, 1).toUpperCase()}.{" "}
+                            {eachStudentObj.names.surname}
+                        </h3>
+                        <h4>{eachStudentObj.username}</h4>
+                        <h4>Birthday: {formattedDate}</h4>
+                        <h4 className="hover" onClick={handleShowMore}>Show more...</h4>
+                        {showDiv && (
+                            <div className="details">
+                                <p>Resume Certification Status: {" "}
+                                    {eachStudentObj.certifications.resume ? "👌🏾" : "❌"} </p>
+                                <p>LinkedIn Profile Status: {" "}
+                                    {eachStudentObj.certifications.linkedin ? "👌🏾" : "❌"} </p>
+                                <p>GitHub Profile Status:{" "}
+                                    {eachStudentObj.certifications.github ? "👌🏾" : "❌"} </p>
+                                <p>Mock Interview Status:{" "}
+                                    {eachStudentObj.certifications.mockInterview ? "👌🏾" : "❌"}  </p>
+                                <p>CodeWars Status: {" "}
+                                    {eachStudentObj.codewars.current.total > 600 ? "👌🏾" : "❌"} </p>
+                            </div>
+                        )}
                     </div>
                 </div>
+                <div className="status">
+                    <CheckOnTrack />
+                </div>
+            </div>
         );
     });
-    
+
     return StudentCardCreator;
 };
 
