@@ -5,15 +5,16 @@ import "./StudentCards.css"
 //  <h3>Total Students:{data.length}</h3>
 
 
+
 const StudentCards = ({ data, season }) => {
+    const [showDivs, setShowDivs] = useState(data.map(() => false));       // CHATGPT helped me expand this into and infinte loop....
 
-    const [showDiv, setShowDiv] = useState(false)
-
-    const handleShowMore = () => {
-        setShowDiv(!showDiv)
-    }
-
-    const StudentCardCreator = data.map((eachStudentObj) => {
+    const handleShowMore = (index) => {
+        setShowDivs((states) => states.map((state, i) => (i === index ? !state : state))
+        );
+    };
+                                                                           //=========================================================
+    const StudentCardCreator = data.map((eachStudentObj, index) => {
 
         const date = new Date(eachStudentObj.dob);
         const options = {
@@ -48,10 +49,10 @@ const StudentCards = ({ data, season }) => {
                 return (
                     <h3 style={{ color: "blue", marginLeft: "85px" }}
                     >NOT on Track to Graduate</h3>
-                )
-            }
+                );
+            };
 
-        }
+        };
         return (
             <div className="container1" key={eachStudentObj.id}>
                 <div>
@@ -66,8 +67,8 @@ const StudentCards = ({ data, season }) => {
                         </h3>
                         <h4>{eachStudentObj.username}</h4>
                         <h4>Birthday: {formattedDate}</h4>
-                        <h4 className="hover" onClick={handleShowMore}>Show more...</h4>
-                        {showDiv && (
+                        <h4 className="hover" onClick={handleShowMore(index)}>Show more...</h4>
+                        {showDivs && (
                             <div className="details">
                                 <p>Resume Certification Status: {" "}
                                     {eachStudentObj.certifications.resume ? "👌🏾" : "❌"} </p>
@@ -79,6 +80,17 @@ const StudentCards = ({ data, season }) => {
                                     {eachStudentObj.certifications.mockInterview ? "👌🏾" : "❌"}  </p>
                                 <p>CodeWars Status: {" "}
                                     {eachStudentObj.codewars.current.total > 600 ? "👌🏾" : "❌"} </p>
+                                    <hr size="3" width="90%" color="green" />
+                                <p><strong>SCORES:</strong></p>
+                                <p>Projects:{(eachStudentObj.cohort.scores.projects * 100).toFixed(2)}%</p>
+                                <p>Assignments:{(eachStudentObj.cohort.scores.assignments * 100).toFixed(2)}%</p>
+                                <p>Total:{(eachStudentObj.cohort.scores.assessments * 100).toFixed(2)}%</p>
+                                   <hr size="3" width="90%" color="green" /> 
+                                <p><strong>CODEWARS:</strong></p>
+                                <p>Current Total:{eachStudentObj.codewars.current.total}</p>
+                                <p>Last Week:{eachStudentObj.codewars.current.lastWeek}</p>
+                                <p>Goal:{eachStudentObj.codewars.goal.total}</p>
+                                 <p>Percent Reach:{(eachStudentObj.codewars.current.total/eachStudentObj.codewars.goal.total)*100}%</p>
                             </div>
                         )}
                     </div>
