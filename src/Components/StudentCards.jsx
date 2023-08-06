@@ -21,10 +21,12 @@ const StudentCards = ({ data, season }) => {
             } else {
                 return season.replace(/([a-zA-Z]+)(\d+)/, "$1 $2")
             }
-        }
-        const status = eachStudentObj.certifications
+        };
 
-        const checkOnTrack = () => {
+        const CheckOnTrack = () => {
+
+            const status = eachStudentObj.certifications
+
             if ((status.resume && status.linkedin && status.github && status.mockInterview) === true && eachStudentObj.codewars.current.total > 60) {
                 return (
                     <h3
@@ -41,11 +43,11 @@ const StudentCards = ({ data, season }) => {
 
         }
         return (
-            <div>
+            <div className="container1">
                 <h1>{seasonFixer}</h1>
                 <h3>Total Students:{data.length}</h3>
 
-                <div key={eachStudentObj.id} className="container1">
+                <div key={eachStudentObj.id} >
                     <div className="pictureBox">
                         <img alt="studentImg" src={eachStudentObj.profilePhoto}></img>
                     </div>
@@ -60,7 +62,9 @@ const StudentCards = ({ data, season }) => {
                         <h4 className="hover">Show more...</h4>
                     </div>
                 </div>
-                <checkOnTrack/>
+                <div>
+                <CheckOnTrack/>
+                </div>
             </div>
         );
     });

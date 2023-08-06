@@ -20,13 +20,6 @@ function dataSelection(data, selectedSeason) {
   }
 }
 
-
-
-
-
-
-
-
 function App() {
 
   const [selectedSeason, setSelectedSeason] = useState("");
@@ -39,7 +32,8 @@ function App() {
 
   return (
     <div className="Master">
-
+      <ClassList data={data} onSeasonSelect={handleSelectedSeason} key="list" />
+       <StudentCards data ={selectedStudents}season={selectedSeason} key="students"/>
     </div>
   )
 
