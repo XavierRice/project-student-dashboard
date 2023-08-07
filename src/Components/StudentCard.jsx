@@ -40,7 +40,7 @@ const StudentCard = ({ student , setShowDiv , showDiv, index }) => {
                         style={{ color: "green", marginLeft: "85px" }}
                     >On Track to Graduate</h3> : <h3 style={{ color: "blue", marginLeft: "5px" }}
                     >NOT on Track to Graduate</h3> }
-                    <h4 className="hover" onClick={() => { handleShowMore(index) }}>Show more...</h4>
+                    <h4 className="hover" onClick={() => { handleShowMore(index) }}>{showDiv === false ? "Show More" : "Close"}</h4>
             </div>
         </div>
     );

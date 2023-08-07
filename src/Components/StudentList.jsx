@@ -6,7 +6,7 @@ const StudentList = ({ data }) => {
 
     const [nameTag, setNameTag] = useState("")
     const [comment, setComment] = useState("")
-    const [showDiv, setShowDiv] = useState(false)
+   const [showDiv, setShowDiv] = useState(false)
 
     const handleShow = (index) => {
         setShowDiv(index)
@@ -28,7 +28,7 @@ const StudentList = ({ data }) => {
 
     const StudentCardCreator = data.map((eachStudentObj, index) => {
 
-       
+
 
         return (
             <> 
@@ -94,7 +94,6 @@ const StudentList = ({ data }) => {
                                     type="submit">
                                     Submit</button>
                             </form>
-                            <h4 className="hover" onClick={() => { handleShow() }}>Show less...</h4>
                         </div>
                     </div>
                 )}
