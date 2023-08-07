@@ -38,7 +38,8 @@ function App() {
         <ClassList data={data} onSeasonSelect={handleSelectedSeason} />
       </div>
       <div className="section2">
-        <h2>{selectedSeason.replace(/([a-zA-Z]+)(\d+)/, "$1 $2")}</h2>
+        <br></br>
+        <h2>{selectedSeason === "All" ? "All Students" : selectedSeason.replace(/([a-zA-Z]+)(\d+)/, "$1 $2")}: </h2>
         <h3>Total Students:{selectedStudents.length}</h3>
         <StudentCards data={selectedStudents} key="students" />
       </div>

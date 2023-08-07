@@ -6,9 +6,10 @@ const StudentList = ({ data }) => {
 
     const [nameTag, setNameTag] = useState("")
     const [comment, setComment] = useState("")
+    const [showDiv, setShowDiv] = useState(false)
 
-    const handleShow = () => {
-        setShowDiv(!showDiv)
+    const handleShow = (index) => {
+        setShowDiv(index)
     };
 
     function handleNameTag(event) {
@@ -27,7 +28,7 @@ const StudentList = ({ data }) => {
 
     const StudentCardCreator = data.map((eachStudentObj, index) => {
 
-        const [showDiv, setShowDiv] = useState(false)
+       
 
         return (
             <> 
