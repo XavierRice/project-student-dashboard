@@ -20,11 +20,21 @@ const StudentList = ({ data }) => {
         setComment(event.target.value)
     };
 
-    function handleSubmit(event) {
+    function handleSubmit(event, student) {
         event.preventDefault();
+
+    const newComment = {
+        commenter:  nameTag,
+        comment:comment,
+    };
+
+    const findIndex = data.findIndex((student) => student.id === student.id)
+      if(findIndex !== -1){
+        data.notes.push(newComment)
+      }
         setNameTag("")
         setComment("")
-    };
+    }
 
     const StudentCardCreator = data.map((eachStudentObj, index) => {
 
@@ -60,7 +70,7 @@ const StudentList = ({ data }) => {
                             <p>Percent Reach:{" "}{(eachStudentObj.codewars.current.total / eachStudentObj.codewars.goal.total).toFixed(2) * 100}%</p>
                             <hr size="3" width="90%" color="green" />
                             <p><strong>NOTES:</strong></p>
-                            <p>Instructor:{eachStudentObj.notes.commenter}</p>
+                            <p>Instructor:{eachStudentObj.notes.commenter[0]}</p>
                             <p>Comment:{eachStudentObj.notes.comments} </p>
                         </div>
                         <div className="container3">
