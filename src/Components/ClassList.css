@@ -1,6 +1,7 @@
 .ClassList{
     border: 3px solid black;
     display: block;
+    padding-right: 0;
     align-items: center;
     height: 550px;
     width: 300px;
