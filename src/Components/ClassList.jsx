@@ -43,8 +43,6 @@ const ClassList = ({ data, onSeasonSelect }) => {
          </div>
       </div>
    )
-
-
 }
 
 export default ClassList

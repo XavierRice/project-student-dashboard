@@ -1,6 +1,11 @@
 .topBar{
-    background-color: lightsteelblue;
+    display: grid;
     text-align: center;
     padding: 0;
     margin: 0;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    background-color: lightseagreen;
 }

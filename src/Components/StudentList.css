@@ -1,0 +1,14 @@
+.details {
+  display: flex;
+  align-items: center;
+  width: 760px;
+  height: 900px;
+  border: 1px solid blue;
+  margin-left: 180px;
+  background-color: slategrey;
+}
+
+#enlargedInput{
+    height: 120px;
+    width: 460px;
+}

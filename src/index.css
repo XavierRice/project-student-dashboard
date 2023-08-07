@@ -1,8 +1,9 @@
 .Master{
  display: flex ;
  margin-top: 60px;
- padding:0
-
+ padding:0;
+ background-color: lightsteelblue;
+ 
 }
 
 .section1{
@@ -21,9 +22,3 @@
     width: 600px;
  }
 
- .header{
-   position: fixed;
-   top:0;
-   left:0;
-   width: 100%;
- }

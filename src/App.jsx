@@ -4,8 +4,7 @@ import { useState } from "react";
 import data from "./data/data.json";
 import TopBar from "./Components/TopBar";
 import ClassList from "./Components/ClassList.jsx";
-import StudentCards from "./Components/StudentCards.jsx";
-import OneOnOne from "./Components/OneOnOne.jsx";
+import StudentCards from "./Components/StudentList.jsx";
 
 //  <div className="header"><TopBar /></div>
 //<StudentCards data ={selectedStudents}season={selectedSeason} key="students"/>
@@ -24,7 +23,6 @@ function App() {
     };
   };
 
-
   const [selectedSeason, setSelectedSeason] = useState("All");
 
   const handleSelectedSeason = (season) => {
@@ -34,22 +32,19 @@ function App() {
   const selectedStudents = dataSelection(data, selectedSeason)
 
   return (
-    <>
-      <div className="Master">
-      
-        {/* <div className="section1">
-        
-        </div> */}
-        <div className="section2">
-          {selectedSeason.replace(/([a-zA-Z]+)(\d+)/, "$1 $2")}
-          <h3>Total Students:{selectedStudents.length}</h3>
-          <StudentCards data={selectedStudents} season={selectedSeason} key="students" />
-        </div>
+    <div className="Master">
+      <div className="header"><TopBar /></div>
+      <div className="section1">
+        <ClassList data={data} onSeasonSelect={handleSelectedSeason} />
       </div>
-    </>
+      <div className="section2">
+        <h2>{selectedSeason.replace(/([a-zA-Z]+)(\d+)/, "$1 $2")}</h2>
+        <h3>Total Students:{selectedStudents.length}</h3>
+        <StudentCards data={selectedStudents} key="students" />
+      </div>
+    </div>
   );
-
-}
+};
 
 export default App;
 

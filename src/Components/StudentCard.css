@@ -1,0 +1,36 @@
+.rectangle{
+   display:flex;
+   align-items: center;
+   width: 800px;
+   height: 300px;
+   border: 1px solid blue;
+   margin-left: 180px;
+   background-color: slategrey
+}
+
+.pictureBox{
+    flex: 1;
+    padding: 10px;
+}
+
+.pictureBox img{
+   max-width: 100%;
+   height: auto;
+}
+
+.textBox{
+    flex: 2;
+    padding: 10px;
+    text-align: center;
+}
+
+.details{
+    display: block;
+    padding: 20px
+}
+
+.hover:hover{
+    text-decoration: underline;
+    color: red;
+}
+
