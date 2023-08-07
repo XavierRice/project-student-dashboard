@@ -2,7 +2,7 @@ import"./StudentCard.css"
 import { useState } from "react";
 
 const StudentCard = ({ student, setShowDiv, showDiv, index }) => {
-    console.log(student)
+    console.log(student.id)
      
 
     const handleShowMore = (index) => {

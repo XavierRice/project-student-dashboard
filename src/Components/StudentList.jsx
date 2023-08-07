@@ -4,6 +4,7 @@ import StudentCard from "./StudentCard";
 
 const StudentList = ({ data }) => {
 
+
     const [nameTag, setNameTag] = useState("")
     const [comment, setComment] = useState("")
     const [showDiv, setShowDiv] = useState(false)
@@ -24,13 +25,13 @@ const StudentList = ({ data }) => {
         event.preventDefault();
 
     const newComment = {
-        commenter:  nameTag,
-        comment:comment,
+        commenter: nameTag,
+        comment: comment,
     };
 
-    const findIndex = data.findIndex((student) => student.id === student.id)
-      if(findIndex !== -1){
-        data.notes.push(newComment)
+    const findIndex = data.find((student) => student.id === student.id)
+      if(student){
+        student.notes.push(newComment)
       }
         setNameTag("")
         setComment("")
