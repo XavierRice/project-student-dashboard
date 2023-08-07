@@ -5,7 +5,10 @@
   height: 900px;
   border: 1px solid blue;
   margin-left: 180px;
+  margin-right: 10px;
   background-color: slategrey;
+ 
+
 }
 
 #enlargedInput{

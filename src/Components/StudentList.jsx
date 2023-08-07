@@ -6,11 +6,11 @@ const StudentList = ({ data }) => {
 
     const [nameTag, setNameTag] = useState("")
     const [comment, setComment] = useState("")
-   const [showDiv, setShowDiv] = useState(false)
+    const [showDiv, setShowDiv] = useState(false)
 
-    const handleShow = (index) => {
-        setShowDiv(index)
-    };
+    // const handleShow =(index) =>{
+    //     setShowDiv(!showDiv)
+    // }
 
     function handleNameTag(event) {
         setNameTag(event.target.value)
@@ -33,7 +33,7 @@ const StudentList = ({ data }) => {
         return (
             <> 
             <div>
-                <StudentCard key={eachStudentObj.id} student={eachStudentObj} setShowDiv={setShowDiv} showDiv={showDiv} index={index} />
+                <StudentCard key={eachStudentObj.id} student={eachStudentObj} showDiv={showDiv} setShowDiv={setShowDiv} index={index} />
                 {showDiv && (
                     <div className="details">
                         <div >
@@ -61,7 +61,7 @@ const StudentList = ({ data }) => {
                             <hr size="3" width="90%" color="green" />
                             <p><strong>NOTES:</strong></p>
                             <p>Instructor:{eachStudentObj.notes.commenter}</p>
-                            <p>Comment:{eachStudentObj.notes.comments}</p>
+                            <p>Comment:{eachStudentObj.notes.comments} </p>
                         </div>
                         <div className="container3">
                             <h3><strong>1-on-1 Notes:</strong></h3>

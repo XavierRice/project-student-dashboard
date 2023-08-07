@@ -1,11 +1,13 @@
 import"./StudentCard.css"
+import { useState } from "react";
 
-const StudentCard = ({ student , setShowDiv , showDiv, index }) => {
+const StudentCard = ({ student, setShowDiv, showDiv, index }) => {
     console.log(student)
+     
 
-     const handleShowMore = (index) => {
+    const handleShowMore = (index) => {
         setShowDiv(!showDiv)
-     };
+    }
 
     const date = new Date(student.dob);                             //learning to use "new"-what creates a new instance of an object.
     const options = {
