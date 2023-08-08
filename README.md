@@ -20,6 +20,7 @@ For this assignment, I have built a student dashboard. Users are able to view st
    - The text of the button changes depending on whether it is open or closed.
    - The details section includes the percentages for all scores, properly formatted as percentages.
    - The details section includes whether or not the student has received certain certifications showing an emoji depending on the certification status.
+   - and finally, the details section DOES NOT open the other details section on the page.
 
  **1-on-1 section.** Has a section in the student details section that contains information about a student's 1-on-1 with an instructor.
    - The section has a title. (e.g. "1-on-1 Notes".)

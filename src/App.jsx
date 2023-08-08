@@ -11,6 +11,20 @@ import StudentCards from "./Components/StudentList.jsx";
 //<ClassList data={data} onSeasonSelect={handleSelectedSeason}/>
 
 
+// <div className="Master">
+//   <div className="header"><TopBar /></div>
+//   <div className="section1">
+//     <ClassList data={data} onSeasonSelect={handleSelectedSeason} />
+//   </div>
+//   <div className="section2">
+//     <br></br>
+//     <h2>{selectedSeason === "All" ? "All Students" : selectedSeason.replace(/([a-zA-Z]+)(\d+)/, "$1 $2")}: </h2>
+//     <h3>Total Students:{selectedStudents.length}</h3>
+//     <StudentCards data={selectedStudents} key="students" />
+//   </div>
+// </div>
+
+
 function App() {
 
   function dataSelection(data, selectedSeason) {
@@ -32,19 +46,19 @@ function App() {
   const selectedStudents = dataSelection(data, selectedSeason)
 
   return (
-    <div className="Master">
-      <div className="header"><TopBar /></div>
-      <div className="section1">
-        <ClassList data={data} onSeasonSelect={handleSelectedSeason} />
+    <>
+      <div className="Master">
+        <div className="header"><TopBar /></div>
+        <div className="section1">
+          <ClassList data={data} onSeasonSelect={handleSelectedSeason} />
+        </div>
+        <div className="section2">
+          <br></br>
+          <StudentCards data={selectedStudents} season = {selectedSeason} key="students" />
+        </div>
       </div>
-      <div className="section2">
-        <br></br>
-        <h2>{selectedSeason === "All" ? "All Students" : selectedSeason.replace(/([a-zA-Z]+)(\d+)/, "$1 $2")}: </h2>
-        <h3>Total Students:{selectedStudents.length}</h3>
-        <StudentCards data={selectedStudents} key="students" />
-      </div>
-    </div>
-  );
+    </>
+  )
 };
 
 export default App;

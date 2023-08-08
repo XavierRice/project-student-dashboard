@@ -17,6 +17,7 @@
    height: 900px;
    width: 1fr;
    margin-right: 20px;
+   background-color: lightgray;
 }
 
 .section2{
@@ -25,6 +26,6 @@
     align-items: center;
     height: 900px;
     width: 800px;
-    
+    /* overflow-y: scroll; */
  }
 

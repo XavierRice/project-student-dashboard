@@ -1,17 +1,21 @@
-.details {
+.studentList{
   display: flex;
-  align-items: center;
-  width: 760px;
-  height: 900px;
-  border: 1px solid blue;
-  margin-left: 180px;
-  margin-right: 10px;
-  background-color: slategrey;
- 
-
+  flex-direction: column;
 }
 
-#enlargedInput{
-    height: 120px;
-    width: 460px;
+.seasons{
+  margin-left: 900px;
+  text-align: center;
+  position: relative;
+  font-size: xx-large;
+  white-space: nowrap;
+  margin-top: 25px;
+}
+
+.total{
+  margin-left: 900px;
+  text-align: center;
+  position: relative;
+  font-size: x-large;
+  white-space: nowrap;
 }

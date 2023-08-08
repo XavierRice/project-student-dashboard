@@ -1,23 +1,29 @@
-.rectangle{
-   display:flex;
+ .component{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+ }
+ 
+ .rectangle{
+   display: flex;
+   flex-direction: row;
    align-items: center;
    width: 800px;
-   height: 300px;
+   height: auto;
    border: 1px solid black;
    margin-bottom: 10px;
-   margin-left: 180px;
+   margin-left: 980px;
    background-color: slategrey;
-   
+   position: relative;
 }
 
 .pictureBox{
     flex: 1;
     padding: 10px;
 }
-
 .pictureBox img{
-   max-width: 100%;
-   height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 .textBox{
@@ -26,13 +32,34 @@
     text-align: center;
 }
 
-.details{
-    display: block;
-    padding: 20px
-}
-
 .hover:hover{
     text-decoration: underline;
     color: red;
+}
+
+.smallImg{
+    display: none;
+    position: absolute;
+    top:100%;
+    left: 0;
+    z-index: 2;
+}
+
+/* .details{
+    position: absolute;
+    flex-direction: column;
+    top:100%;
+    left:0;
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    background-color: grey;
+    height: 100%;
+} */
+
+
+ #enlargedInput{
+    height: 120px;
+    width: 460px;
 }
 
