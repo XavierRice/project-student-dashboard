@@ -1,11 +1,11 @@
 .studentList{
   display: flex;
   flex-direction: column;
-  z-index: 1;
+  
 }
 
 .seasons{
-  margin-left: 900px;
+  /* margin-left: 900px; */
   text-align: center;
   position: relative;
   font-size: xx-large;
@@ -14,7 +14,7 @@
 }
 
 .total{
-  margin-left: 900px;
+  /* margin-left: 00px; */
   text-align: center;
   position: relative;
   font-size: x-large;

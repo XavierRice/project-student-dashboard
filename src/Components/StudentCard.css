@@ -1,9 +1,11 @@
- .component{
-    position: relative;
-    display: flex;
-    flex-direction: column;
- }
- 
+.component{
+position: relative;
+display: flex;
+flex-direction: column;
+
+}
+
+
  .rectangle{
    display: flex;
    flex-direction: row;
@@ -12,7 +14,6 @@
    height: auto;
    border: 1px solid black;
    margin-bottom: 10px;
-   margin-left: 980px;
    background-color: slategrey;
    position: relative;
 }
@@ -21,6 +22,8 @@
     flex: 1;
     padding: 10px;
 }
+
+
 .pictureBox img{
     max-width: 100%;
     height: auto;
@@ -42,24 +45,11 @@
     position: absolute;
     top:100%;
     left: 0;
-    z-index: 2;
+   
 }
-
-/* .details{
-    position: absolute;
-    flex-direction: column;
-    top:100%;
-    left:0;
-    display: flex;
-    padding: 20px;
-    width: 100%;
-    background-color: grey;
-    height: 100%;
-} */
-
 
  #enlargedInput{
     height: 120px;
     width: 460px;
 }
-
+ 

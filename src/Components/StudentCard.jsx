@@ -50,7 +50,7 @@ const StudentCard = ({ student, index }) => {
     const codeWars = student.codewars.current.total;
 
     return (
-        <div className="component">
+     
             <div className="rectangle" key={student.id}>
                 <div className="pictureBox">
                     <img alt="studentImg" src={student.profilePhoto}></img>
@@ -137,7 +137,7 @@ const StudentCard = ({ student, index }) => {
                     </div>
                 )}
             </div>
-        </div>
+    
     );
 
 };

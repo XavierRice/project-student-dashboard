@@ -4,7 +4,7 @@ import "./ClassList.css";
 const ClassList = ({ data, onSeasonSelect }) => {
 
    const [selection, setSelection] = useState("")
- //  console.log(selection)
+   console.log(selection)
 
    function handleSeason(event) {
 
